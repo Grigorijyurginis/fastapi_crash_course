@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class STaskAdd(BaseModel):
@@ -15,3 +15,5 @@ class STaskAddResponse(BaseModel):
 
 class STask(STaskAdd):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
